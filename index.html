@@ -1,0 +1,3431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Document</title> -->
+    <style>
+     h1 {
+        font-style: italic;
+        color: black;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 16px;
+        table-layout: fixed;
+      }
+      table,
+      th,
+      td {
+        margin: auto;
+        font-size: small;
+        border: 1px solid black;
+        text-align: center;
+        padding: 4px;
+      }
+      th,
+      td {
+        overflow: hidden;
+      }
+      th {
+        background-color: #f2cb8d;
+      }
+      td input {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        border: none;
+        padding: 5px;
+        font-size: 16px;
+        font-family: inherit;
+        text-align: center;
+      }
+
+      td input:focus {
+        outline: none;
+        border: 1px solid #ccc;
+      }
+      .highlight-row {
+        background-color: #f2cb8d;
+      }
+      .action-container {
+        margin-top: 20px;
+      }
+      .action-container button {
+        margin: 5px;
+        padding: 8px;
+        font-size: 14px;
+      }
+      .action-btn {
+        padding: 4px 8px;
+        font-size: 12px;
+        margin-top: 4px;
+      }
+      .language-toggle {
+        margin-bottom: 10px;
+      }
+      button {
+        border: 1px solid;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 4px 8px;
+      }
+      button:hover {
+        background-color: rgb(105, 173, 233);
+      }
+      #editBtn,
+      #updateBtn {
+        color: white;
+        background-color: black;
+      }
+      #editBtn:hover,
+      #updateBtn:hover {
+        color: rgb(255, 132, 0);
+      }
+      #deleteBtn {
+        background-color: red;
+        color: white;
+      }
+      #deleteBtn:hover {
+        color: rgb(6, 249, 172);
+      }
+      @media print {
+    .pagebreak {
+        clear: both;
+        page-break-after: always;
+    }
+}
+</style>
+  </head>
+  <body>
+    <section class="first-table">
+      <table id="population-table">
+        <caption id="pageTitle" style="text-align: center;">तालिका ९: जनसंख्या
+          विवरणको अवस्था</caption>
+        <thead>
+          <tr>
+            <th id="headerWard" rowspan="3">वडा नं</th>
+            <th id="headerPopulationSituation" colspan="6">जनसांख्यिक
+              अवस्था</th>
+          </tr>
+          <tr>
+            <th id="headerHouseHold" rowspan="2">घरपरिवार</th>
+            <th id="headerPopulation" colspan="3">जनसंख्या</th>
+            <th id="headerAvgHousehold" rowspan="2">औसत घरपरिवारको आकार</th>
+            <th id="headerAvgGenderRation" rowspan="2">लैङ्गिक अनुपात</th>
+          </tr>
+          <tr>
+            <th>जम्मा</th>
+            <th>पुरुष</th>
+            <th>महिला</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <div style="break-after:page"></div>
+
+    <section class="table2">
+      <h1 id="pageTitle" style="text-align: center">जनघनत्वको अवस्था</h1>
+
+      <table id="dynamicTable2">
+        <thead>
+          <tr>
+            <th rowspan="2" id="headerWard">वडा नं</th>
+            <th colspan="2" id="headerArea">जनसंख्या विवरण</th>
+            <th colspan="2" id="headerPopulation">क्षेत्रफल विवरण</th>
+            <th colspan="1" id="headerDensity">जनघनत्व</th>
+          </tr>
+          <tr>
+            <th id="headerPopulation">जनसंख्या</th>
+            <th id="headerPercentage">प्रतिशत</th>
+            <th id="headerAreaDetails">क्षेत्रफल विवरण (व.किमी)</th>
+            <th id="headerPercentage">प्रतिशत</th>
+            <th id="headerSquare">प्रति व.किमी</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <div style="break-after:page"></div>
+
+    <section class="table3">
+      <h1 id="pageTitle" style="text-align: center">
+        तालिका ३ः उमेर तथा लिङ्गका आधारमा जनसंख्या विवरण
+      </h1>
+
+      <table id="age-gender-population">
+        <thead>
+          <tr>
+            <th id="headerWard" rowspan="3">वडा नं</th>
+            <th id="headerAgePopulation" colspan="14">
+              उमेर समूह अनुसार जनसंख्या
+            </th>
+          </tr>
+          <tr>
+            <th id="header0To14" colspan="2">००-१४ वर्ष</th>
+            <th id="header15To29" colspan="2">१५-२९ वर्ष</th>
+            <th id="header30To44" colspan="2">३०-४४ वर्ष</th>
+            <th id="header45To59" colspan="2">४५-५९ वर्ष</th>
+            <th id="header60To74" colspan="2">६०-७४ वर्ष</th>
+            <th id="header75To89" colspan="2">७५-८९ वर्ष</th>
+            <th id="header90More" colspan="2">९० वर्ष माथि</th>
+          </tr>
+          <tr>
+            <th>पुरुष</th>
+            <th>महिला</th>
+            <th>पुरुष</th>
+            <th>महिला</th>
+            <th>पुरुष</th>
+            <th>महिला</th>
+            <th>पुरुष</th>
+            <th>महिला</th>
+            <th>पुरुष</th>
+            <th>महिला</th>
+            <th>पुरुष</th>
+            <th>महिला</th>
+            <th>पुरुष</th>
+            <th>महिला</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <div style="break-after:page"></div>
+    <section class="table4">
+      <h1 id="pageTitle" style="text-align: center;">तालिका ४: मातृभाषका आधारमा
+        जनसंख्या विवरण</h1>
+
+      <table id="motherLand">
+        <thead>
+
+          <tr>
+            <th id="headerWard">वडा नं</th>
+            <th id="headerBhojpuri">भोजपुरी</th>
+            <th id="headerMagar">मगर</th>
+            <th id="headerNepali">नेपाली</th>
+            <th id="headerThakuri">ठकुरी</th>
+            <th id="headerTharu">थारु</th>
+            <th id="headerOther">अन्य</th>
+          </tr>
+
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>            <td>test</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <div style="break-after:page"></div>
+
+    <section class="table5">
+      <h1 id="pageTitle" style="text-align: center;">तालिका ५ः धर्मअनुसार
+        जनसंख्या विवरण</h1>
+
+      <table id="religion">
+        <thead>
+
+          <tr>
+            <th id="headerWard">वडा नं</th>
+            <th id="headerHindu">हिन्दु</th>
+            <th id="headerIslam">इस्लाम</th>
+            <th id="headerIsai">इसाई </th>
+            <th id="headerBaudha">बौद्ध</th>
+            <th id="headerOther">अन्य</th>
+          </tr>
+
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <div style="break-after:page"></div>
+
+    <section class="table6">
+      <h1 id="pageTitle" style="text-align: center;">तालिका ६: अपांगताका आधारमा
+        घरपरिवार विवरण</h1>
+
+      <table id="handicap">
+        <thead>
+          <tr>
+            <th rowspan="2" id="headerWard">वडा नं</th>
+            <th colspan="10" id="headerHandicap">अपांगताका आधारमा जनसंख्या</th>
+          </tr>
+          <tr>
+            <th id="headerNoHandicap">अपाङ्गता नभएको</th>
+            <th id="headerHealthHandicap">शारीरिक अपाङ्गता</th>
+            <th id="headerDristi">दृष्टिविहीन</th>
+            <th id="headerBahiro">बहिरोपन</th>
+            <th id="headerManoSamajik">मनोसामाजिक अपाङ्गता</th>
+            <th id="headerNyuna">न्यून अपाङ्गता</th>
+            <th id="headerBaudhik">बौद्धिक अपाङ्गता</th>
+            <th id="headerAnubanshiya">अनुवंशीय रक्तश्राव</th>
+            <th id="headerAtijam">अटिजम्</th>
+            <th id="headerBahuHandicap">बहुअपाङ्गता</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <div style="break-after:page"></div>
+
+    <section class="table7">
+      <h1 id="pageTitle" style="text-align: center">
+        तालिका ७: आवासमाथिको स्वामित्वका आधारमा घरपरिवार विवरण
+      </h1>
+
+      <table id="aawasTable">
+        <thead>
+          <tr>
+            <th id="headerWard" rowspan="2">वडा नं</th>
+            <th id="headerAwas" colspan="4">
+              आवासीय स्वमित्वका आधारमा घरपरिवार विवरण
+            </th>
+            <th rowspan="2">जम्मा</th>
+          </tr>
+          <tr>
+            <th>आफ्‌नै</th>
+            <th>भाडा</th>
+            <th>संस्थागत</th>
+            <th>अन्य</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <div style="break-after:page"></div>
+
+    <section class="table8">
+      <h1 id="pageTitle" style="text-align: center">
+        तालिका ८ः घरमुलीका आधारमा घरपरिवार विवरण
+      </h1>
+      <table id="gharmuliTable">
+        <thead>
+          <tr>
+            <th id="headerWard" rowspan="2">वडा नं</th>
+            <th id="headerGharmuli" colspan="3">
+              लैङ्गिकताका आधारमा घरमूली संख्या
+            </th>
+          </tr>
+          <tr>
+            <th>पुरुष घरमूली</th>
+            <th>महिला घरमूली</th>
+
+            <th>जम्मा</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <div style="break-after:page"></div>
+
+    <section>
+      <h1 id="pageTitle" style="text-align: center;">तालिका ९: बसोवासको अवस्थाका
+        आधारमा घरपरिवार विवरण</h1>
+      <table id="basobaasTable">
+        <thead>
+          <tr>
+            <th id="headerWard" rowspan="3">वडा नं</th>
+            <th id="headerGharmuli" colspan="3">
+              बसोबासका आधारमा जनसंख्या विवरण
+            </th>
+            <th rowspan="3">जम्मा जनसंख्या</th>
+          </tr>
+          <tr>
+            <th rowspan="2">गणना गरेको स्थानमा बसोबास गरेको</th>
+            <th rowspan="2">स्वदेशमा अन्यत्र बसोवास गरेको</th>
+
+            <th rowspan="2">विदेशमा बसेको</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <div style="break-after:page"></div>
+
+    <section>
+      <h1 id="pageTitle" style="text-align: center">
+        तालिका १०: बसोवासको प्रकृतिका आधारमा घरपरिवार विवरण
+      </h1>
+      <table id="basobaasTable2">
+        <thead>
+          <tr>
+            <th id="headerWard" rowspan="3">वडा नं</th>
+            <th id="headerGharmuli" colspan="3">
+              बसोबासका आधारमा जनसंख्या विवरण
+            </th>
+            <th rowspan="3">जम्मा जनसंख्या</th>
+          </tr>
+          <tr>
+            <th rowspan="2">स्थायी बसोबास गरेको</th>
+            <th rowspan="2">अस्थायी बसोवास गरेको</th>
+
+            <th rowspan="2">उपलब्ध नभएको </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <div style="break-after:page"></div>
+
+    <!-- 11 -->
+    <!-- <div style="break-after:page"></div> -->
+
+    <section>
+      <h1 id="pageTitle" style="text-align: center">
+        तालिका ११: वैवाहिक स्थितिका आधारमा घरपरिवार विवरण
+      </h1>
+      <table id="maritalPopulationTable">
+        <thead>
+          <tr>
+            <th id="headerWard" rowspan="3">वडा नं</th>
+            <th id="headerGharmuli" colspan="5">वैवाहिक स्थिति सम्बन्धी
+              विवरण</th>
+            <th rowspan="3">कम उमेर</th>
+            <th rowspan="3">जम्मा</th>
+          </tr>
+          <tr>
+            <th rowspan="2">अविवाहित</th>
+            <th rowspan="2">विवाहित</th>
+
+            <th rowspan="2">विधवा /विदुर</th>
+            <th rowspan="2">सम्बन्ध विच्छेद</th>
+            <th rowspan="2">विवाहित तर अलग बसेको</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <!-- 12 -->
+    <div style="break-after:page"></div>
+
+    <section>
+      <h1 id="pageTitle" style="text-align: center">
+        तालिका १२ः मुख्य पेशासम्बन्धी विवरण
+      </h1>
+      <table id="pasuPesaTable">
+        <thead>
+          <tr>
+            <th rowspan="2">वडा नं</th>
+            <th rowspan="2">कृषि तथा पशुपालन</th>
+            <th rowspan="2">नोकरी</th>
+            <th rowspan="2">उद्योग तथा व्यापार</th>
+            <th rowspan="2">ज्याला/मजदुरी</th>
+            <th rowspan="2">व्यवसायिक कार्य</th>
+            <th rowspan="2">वैदेशिक रोजगारी</th>
+            <th rowspan="2">विद्यार्थी (अध्ययनरत)</th>
+            <th rowspan="2">गृहणी</th>
+            <th rowspan="2">वेरोजगार</th>
+            <th rowspan="2">कम उमेर</th>
+            <th rowspan="2">अन्य</th>
+            <th rowspan="2">उपलब्ध नभएको</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 13 -->
+    <div style="break-after:page"></div>
+
+    <section>
+      <h1 id="pageTitle" style="text-align: center">
+        तालिका १३: कृषि कार्यमा उपयोग भएको क्षेत्रफल
+      </h1>
+      <table id="krisWorkTable">
+        <thead>
+          <tr>
+            <th id="headerWard" rowspan="2">वडा नम्बर</th>
+            <th id="headerGharmuli" colspan="4">भू उपयोग</th>
+          </tr>
+          <tr>
+            <th>कृषि</th>
+            <th>वस्ति</th>
+
+            <th>नदि तथा पोखरी</th>
+            <th>जम्मा</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 14 -->
+    <div style="break-after:page"></div>
+
+    <section>
+      <h1 id="pageTitle" style="text-align: center">
+        तालिका १४: कृषिजन्य उत्पादनसम्बन्धी विवरण
+      </h1>
+      <table id="krisJanyaUtapadanTable">
+        <thead>
+          <tr>
+            <th rowspan="3">वडा नम्बर</th>
+            <th colspan="3">अन्नवाली</th>
+            <th colspan="3">दलहन बाली</th>
+            <th colspan="3">तेलहन बाली</th>
+          </tr>
+          <tr>
+            <th rowspan="2">क्षेत्रफल (कठ्ठा)</th>
+            <th rowspan="2">उत्पादन (क्विन्टल)</th>
+            <th rowspan="2">विक्रि (क्विन्टल)</th>
+            <th rowspan="2">क्षेत्रफल (कठ्ठा)</th>
+            <th rowspan="2">उत्पादन (क्विन्टल)</th>
+            <th rowspan="2">विक्रि (क्विन्टल)</th>
+            <th rowspan="2">क्षेत्रफल (कठ्ठा)</th>
+            <th rowspan="2">उत्पादन (क्विन्टल)</th>
+            <th rowspan="2">विक्रि (क्विन्टल)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 15 -->
+    <div style="break-after:page"></div>
+
+    <section>
+      <h1 id="pageTitle" style="text-align: center">
+        तालिका १५: पशुपालन तथा दुधजन्य उत्पादनको अवस्था
+      </h1>
+      <table id="pashuPalanDairyTable">
+        <thead>
+          <tr>
+            <th rowspan="3">वडा नं.</th>
+            <th colspan="2">गाई</th>
+            <th colspan="2">भैसी</th>
+            <th colspan="2">जम्मा</th>
+            <th rowspan="3">क्रियाहरू</th>
+          </tr>
+          <tr>
+            <th rowspan="2">संख्या</th>
+            <th rowspan="2">दुध/ध्यु उत्पादन (लिटर)</th>
+            <th rowspan="2">संख्या</th>
+            <th rowspan="2">दुध/ध्यु उत्पादन (लिटर)</th>
+            <th rowspan="2">पशु संख्या</th>
+            <th rowspan="2">दुध/ध्यु उत्पादन (लिटर)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </section>
+    <!-- 16 -->
+    <div style="break-after:page"></div>
+
+    <section>
+      <h1 id="pageTitle" style="text-align: center;">तालिका १६: पशुपन्छी पालन
+        गर्ने घरपरिवार विवरण</h1>
+      <table id="pashuPanchiPalanTable">
+        <thead>
+          <tr>
+            <th rowspan="2">वडा नं.</th>
+            <th colspan="3">पशुपालन गर्ने घरपरिवार संख्या</th>
+            <th rowspan="2">जम्मा घरपरिवार</th>
+            <th rowspan="2">क्रियाहरू</th>
+          </tr>
+          <tr>
+            <th>पशुपालन गर्ने</th>
+            <th>पशुपालन नगर्ने</th>
+            <th>उपलब्ध नभएको</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <!-- 20 -->
+    <div style="break-after:page"></div>
+
+    <section>
+      <h1 id="pageTitle" style="text-align: center">
+        तालिका २०: व्यवसायिक तालिम लिनेहरुको विवरण
+      </h1>
+      <table id="population-table">
+        <thead>
+          <tr>
+            <th id="headerWard" rowspan="2">वडा नं</th>
+            <th id="headerPopulationSituation" colspan="3">व्यवसायीक सीपमूलक
+              तालिम लिनेहरुको संख्या</th>
+            <th rowspan="2">क्रियाहरू</th>
+          </tr>
+          <tr>
+            <th>पुरुष</th>
+            <th>महिला</th>
+            <th> जम्मा</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+         
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+         
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+         
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+         
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+         
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+         
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <!-- 21 -->
+    <div style="break-after:page"></div>
+
+    <section>
+      <!-- <caption></caption> -->
+      <h1 id="pageTitle" style="text-align: center">
+        तालिका २१: व्यवसायिक तालिम लिने घरपरिवारहरुको विवरण
+      </h1>
+      <table id="population-table">
+        <thead>
+          <tr>
+            <th id="headerWard" rowspan="2">वडा नं</th>
+            <th id="headerPopulationSituation" colspan="10">व्यवसायीक सीपमूलक
+              तालिम लिनेहरुको संख्या</th>
+          </tr>
+          <tr>
+            <th>सिलाई,बुनाई,बुटिक,श्रृगार तथा पार्लर</th>
+            <th>सूचना प्रविधि,इलेक्ट्रिकल तथा इलेक्ट्रोनिक्स</th>
+            <th> निर्माण सम्बन्धी</th>
+            <th>इञ्जिनियरिङ्ग,अटोमोवाइल र मकानिक्स्</th>
+            <th>कृषि सम्बन्धी</th>
+            <th>जनस्वास्थ्य सम्बन्धी</th>
+            <th>पशु स्वास्थ्य </th>
+            <th>पर्यटन सम्बन्धी</th>
+            <th>कला सम्बन्धी</th>
+            <th>अन्य</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+    <!-- 22 -->
+    <div style="break-after:page"></div>
+
+    <section>
+      <h1 style="text-align: center;">तालिका २२: बैंक तथा वित्तीय संस्थामा खाता
+        हुने घरपरिवार विवरण</h1>
+      <table id="population-table">
+        <thead>
+          <tr>
+            <th id="headerWard" rowspan="2">वडा नं</th>
+            <th id="headerPopulationSituation" colspan="4">बैंक तथा वित्तीय
+              संस्थामा खाता हुने घरपरिवार संख्या</th>
+          </tr>
+          <tr>
+            <th>खाता हुने</th>
+            <th>खाता नहुने</th>
+            <th>उपलब्ध नभएको</th>
+            <th>जम्मा</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </section>
+    <!-- 23 -->
+    <div style="break-after:page"></div>
+
+    <!-- <section>
+      <h1 style="text-align: center;">तालिका २३: पारिवारिक आम्दानी विवरण</h1>
+      <table id="population-table">
+        <thead>
+          <tr>
+            <th id="headerWard" rowspan="2">वडा नं</th>
+            <th id="headerPopulationSituation" colspan="7">पारिवारिक आम्दानी
+              विवरण रकम (रु. हजारमा)</th>
+          </tr>
+          <tr>
+            <th>५० हजार भन्दा कम</th>
+            <th>(५०-१५०)हजार</th>
+            <th> (१५०-२५०)हजार</th>
+            <th>(२५०-५००)हजार</th>
+            <th>५०० हजार भन्दा बढि</th>
+            <th> उपलब्ध नभएको</th>
+            <th>जम्मा</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+          </tr>
+        </tbody>
+      </section> -->
+      <!-- 24 -->
+      <!-- <div style="break-after:page"></div> -->
+
+      <section>
+        <h1 style="text-align: center;">तालिका २४: पारिवारिक खर्च विवरण</h1>
+        <table id="population-table">
+          <thead>
+            <tr>
+              <th id="headerWard" rowspan="2">वडा नं</th>
+              <th id="headerPopulationSituation" colspan="7">पारिवारिक खर्च
+                विवरण रकम (रु. हजारमा)</th>
+            </tr>
+            <tr>
+              <th>५० हजार भन्दा कम</th>
+              <th>(५०-१५०)हजार</th>
+              <th> (१५०-२५०)हजार</th>
+              <th>(२५०-५००)हजार</th>
+              <th>५०० हजार भन्दा बढि</th>
+              <th> उपलब्ध नभएको</th>
+              <th>जम्मा</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- 25 -->
+      <div style="break-after:page"></div>
+
+      <section>
+        <h1 style="text-align: center;">तालिका २५: बैंक तथा वित्तीय संस्थाको
+          विवरण</h1>
+        <table id="population-table">
+          <thead>
+            <tr></tr>
+            <tr>
+              <th>क्र.सं.</th>
+              <th>नाम</th>
+              <th>ठेगाना</th>
+              <th>सम्पर्क नं.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- 26 -->
+      <div style="break-after:page"></div>
+
+      <section>
+        <h1 style="text-align: center;">तालिका २६: साक्षरताको अवस्था</h1>
+        <table id="population-table">
+          <thead>
+            <tr>
+              <th id="headerWard" rowspan="2">वडा नं</th>
+              <th rowspan="2">बडा नं.</th>
+              <th colspan="2">लेख्न र पढ्न जान्ने</th>
+              <th colspan="2">पढ्न जान्ने</th>
+              <th colspan="2">लेख्न र पढ्न नजान्ने</th>
+              <th rowspan="2">उपलब्ध नभएको</th>
+              <th rowspan="2">साक्षरता दर</th>
+            </tr>
+
+            <tr>
+              <th>पुरुष</th>
+              <th>महिला</th>
+              <th>पुरुष</th>
+              <th>महिला</th>
+              <th>पुरुष</th>
+              <th>महिला</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- 27 -->
+      <div style="break-after:page"></div>
+
+      <section>
+        <h1 style="text-align: center;">तालिका २७: शैक्षिकस्तरको अवस्था</h1>
+        <table id="population-table">
+          <thead>
+            <tr>
+              <th id="headerWard" rowspan="2">वडा नं</th>
+              <th id="headerPopulationSituation" colspan="9">शैक्षिकस्तर अनुसार
+                जनसंख्या</th>
+            </tr>
+            <tr>
+              <th>पूर्व बालविकास</th>
+              <th>प्राथमिक</th>
+              <th> निम्न माध्यामिक </th>
+              <th> उच्च माध्यामिक</th>
+              <th>एसएलसी</th>
+              <th>प्रविणता</th>
+              <th>स्नातक</th>
+              <th>स्नाकोत्तर सरह</th>
+              <th>अन्य</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>     
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>     
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>     
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>     
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>     
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>     
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>     
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!--  28-->
+      <div style="break-after:page"></div>
+
+      <section>
+        <h1 style="text-align: center;">तालिका २८ः शैक्षिक संस्थासम्बन्धी
+          विवरण</h1>
+        <table id="population-table">
+          <thead>
+            <tr>
+              <th>क्र.सं.</th>
+              <th>विद्यालयको नाम</th>
+              <th>वडा नं. </th>
+              <th>संचालित कक्षा</th>
+              <th>सम्पर्क नं.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>     
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>  test</td>
+          
+            </tr>
+            <tr>     
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>  test</td>
+          
+            </tr>
+            <tr>     
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>  test</td>
+          
+            </tr>
+            <tr>     
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>  test</td>
+          
+            </tr>
+            <tr>     
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>  test</td>
+          
+            </tr>
+            <tr>     
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>  test</td>
+          
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- 29 -->
+      <div style="break-after:page"></div>
+
+      <section>
+        <h1 style="text-align: center;">तालिका २९: शिक्षक विवरण</h1>
+        <table id="population-table">
+          <thead>
+            <tr>
+              <th id="headerWard" rowspan="2">क्र.सं</th>
+              <th id="headerWard" rowspan="2">विद्यालयको नाम</th>
+              <th id="headerWard" rowspan="2">वडा नं</th>
+              <th id="headerPopulationSituation" colspan="3">शिक्षक संख्या</th>
+              
+            </tr>
+            <tr>
+              <th>शिक्षक</th>
+              <th>शिक्षिका</th>
+              <th>जम्मा</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>     
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>  test</td>
+              <td>  test</td>
+          
+            </tr>
+            <tr>     
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>  test</td>
+              <td>  test</td>
+          
+            </tr>
+            <tr>     
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>  test</td>
+              <td>  test</td>
+          
+            </tr>
+            <tr>     
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>  test</td>
+              <td>  test</td>
+          
+            </tr>
+            <tr>     
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>  test</td>
+              <td>  test</td>
+          
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- 30 -->
+      <div style="break-after:page"></div>
+
+      <section>
+        <h1 style="text-align: center;">तालिका ३०: स्वास्थ्य संस्था विवरण</h1>
+        <table id="population-table">
+          <thead>
+            <tr>
+              <th>क्र.सं.</th>
+              <th>स्वास्थ्य संस्था</th>
+              <th>संख्या</th>
+              <th>क्रियाहरू</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>        <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td></tr>
+            <tr>        <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td></tr>
+            <tr>        <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td></tr>
+            <tr>        <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td></tr>
+            <tr>        <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td></tr>
+            <tr>        <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td></tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- 31 -->
+      <div style="break-after:page"></div>
+
+      <section>
+        <h1 style="text-align: center;">तालिका ३१ : मृत्युको कारण</h1>
+        <table id="population-table">
+          <thead>
+            <tr>
+              <th id="headerWard" rowspan="3">वडा नं</th>
+              <th colspan="9">मृत्युको कारणअनुसार एक वर्ष भित्र मृत्यु हने
+                जनसंख्या</th>
+            </tr>
+            <tr>
+              <th colspan="2">महामारी</th>
+              <th colspan="2">सर्ने रोग</th>
+              <th colspan="2">नसर्ने रोग</th>
+              <th colspan="2">दुर्घटना</th>
+              <th colspan="1">जम्मा</th>
+
+            </tr>
+
+            <tr>
+              <th>पुरुष</th>
+              <th>महिला</th>
+              <th>पुरुष</th>
+              <th>महिला</th>
+              <th>पुरुष</th>
+              <th>महिला</th>
+              <th>पुरुष</th>
+              <th>महिला</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- 32 -->
+      <div style="break-after:page"></div>
+
+      <section>
+        <h1 style="text-align: center;"> तालिका ३२: पारिवारिक खर्च विवरण</h1>
+        <table id="population-table">
+          <thead>
+            <tr>
+              <th id="headerWard" rowspan="2">वडा नं</th>
+              <th id="headerPopulationSituation" colspan="4">स्वास्थ्य
+                अवस्थाअनुसार जनसंख्या</th>
+            </tr>
+            <tr>
+              <th>स्वस्थ्य</th>
+              <th>सामान्य रोग लागेको</th>
+              <th>दीर्घ रोग लागेको</th>
+              <th>जम्मा</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 33 -->
+      <div style="break-after:page"></div>
+
+      <section>
+        <h1 style="text-align: center;"> तालिका ३३: जीवन विमाको अवस्था</h1>
+        <table id="population-table">
+          <thead>
+            <tr>
+              <th id="headerWard" rowspan="2">वडा नं</th>
+              <th id="headerPopulationSituation" colspan="4">विमा गरेको
+                जनसंख्या</th>
+            </tr>
+            <tr>
+              <th>जीवन विमा</th>
+              <th>स्वास्थ्य विमा</th>
+              <th>अन्य विमा</th>
+              <th>जम्मा</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- 34 -->
+      <div style="break-after:page"></div>
+
+      <section>
+        <h1 style="text-align: center;">तालिका ३४: खेलमैदान स्थल सम्बन्धी
+          विवरण</h1>
+        <table id="population-table">
+          <thead>
+            <tr>
+              <th>क्र.सं.</th>
+              <th>खेल मैदानको नाम</th>
+              <th>खेल मैदान रहेको स्थान</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <!-- 35 -->
+      <div style="break-after:page"></div>
+
+      <section>
+        <h1 style="text-align: center;">तालिका ३५: पार्क, पिकनिक तथा मनोरञ्जन
+          स्थल सम्बन्धी विवरण</h1>
+        <table id="population-table">
+          <thead>
+            <tr>
+              <th>क्र.सं.</th>
+              <th>स्थलको नाम</th>
+              <th>स्थान</th>
+              <th>स्वामित्व</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- 36 -->
+      <div style="break-after:page"></div>
+
+      <section>
+        <h1 style="text-align: center;">तालिका ३६: स्थानीय चाडपर्व, जात्रा र
+          मेला</h1>
+        <table id="population-table">
+          <thead>
+            <tr>
+              <th>मनाइने चाड पर्व</th>
+              <th>जातजातीको नाम</th>
+              <th>मेला तथा जात्रा र लाग्ने स्थान समय</th>
+              <th>क्रियाहरू</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- 37 -->
+      <div style="break-after:page"></div>
+
+      <section>
+        <h1 style="text-align: center;">तालिका ३७ : सार्वजनिक ताल पोखरी र
+          सिमसार</h1>
+        <table id="population-table">
+          <thead>
+            <tr>
+              <th>क्र.सं.</th>
+              <th>पोखरीको नाम</th>
+              <th>स्थान</th>
+              <th>क्रियाहरू</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- 38 -->
+      <div style="break-after:page"></div>
+
+      <section>
+        <h1 style="text-align: center;">तालिका ३८ : विपद्को प्रभाव</h1>
+        <table id="population-table">
+          <thead>
+            <tr>
+              <th id="headerWard" rowspan="2">क्र.सं.</th>
+              <th rowspan="2">प्रकोप/विपद</th>
+              <th id="headerPopulationSituation" colspan="3">प्रभाव अनुसार
+                घरपरिवार</th>
+              <th rowspan="2">जम्मा</th>
+            </tr>
+            <tr>
+              <th>असर रहेको (%)</th>
+              <th>देखिएको तर प्रभाव नभएको (%) </th>
+              <th> विपद नभएको (%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- 39 -->
+      <div style="break-after:page"></div>
+
+      <section>
+        <h1 style="text-align: center;">तालिका ३९: विपद्को किसिम अनुसार जोखिमको
+          समय</h1>
+        <table id="population-table">
+          <thead>
+            <tr>
+              <th id="headerWard" rowspan="2">वडा नं</th>
+              <th id="headerPopulationSituation" colspan="6">विपद् अनुसार
+                जोखिमको समय (महिना)</th>
+            </tr>
+            <tr>
+              <th>आगलागी</th>
+              <th>बाढ़ी डुवान</th>
+              <th>शीतलहर</th>
+              <th>रोग माहामारी</th>
+              <th>सर्पको टोकाइ</th>
+              <th>जंगली जनावरबाट क्षती</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- 40 -->
+      <div style="break-after:page"></div>
+
+      <section>
+        <h1 style="text-align: center;">तालिका ४०: पुलहरुको विवरण</h1>
+        <table id="population-table">
+          <thead>
+            <tr>
+              <th>क्र.सं.</th>
+              <th>पुल/खोलाको नाम</th>
+              <th>पुल जोड्ने स्थान</th>
+              <th>कैफियत</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!--  41-->
+      <div style="break-after:page"></div>
+
+      <section>
+        <h1 style="text-align: center;">तालिका ४१: सडकहरुहरुको विवरण</h1>
+        <table id="population-table">
+          <thead>
+            <tr>
+              <th>क्र.सं.</th>
+              <th>विवरण</th>
+              <th>कुल लम्बाई</th>
+              <th>कैफियत</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <!-- 42 -->
+      <div style="break-after:page"></div>
+
+      <section>
+        <h1 style="text-align: center;">तालिका ४२ : उर्जा प्रयोग गर्नेहरुको
+          विवरण</h1>
+        <table id="population-table">
+          <thead>
+            <tr>
+              <th id="headerWard" rowspan="2">वडा नं</th>
+              <th id="headerPopulationSituation" colspan="9">पारिवारिक आम्दानी
+                विवरण रकम (रु. हजारमा)</th>
+              <th rowspan="2">जम्मा </th>
+              <th rowspan="2">प्रतिशत</th>
+            </tr>
+            <tr>
+              <th>१</th>
+              <th>२</th>
+              <th>३</th>
+              <th>४</th>
+              <th> ५</th>
+              <th>६</th>
+              <th>७</th>
+              <th>८</th>
+              <th>९</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+      <!-- 43 -->
+      <div style="break-after:page"></div>
+
+      <section>
+        <h1 style="text-align: center;">तालिका ४३ : गाउँपालिका भित्र रहेका
+          टावरहरुको विवरण</h1>
+        <table id="population-table" style="margin-bottom: 23px;">
+          <thead>
+            <tr>
+              <th>क्र.सं.</th>
+              <th>सेवा प्रदायक मक्पनी</th>
+              <th>टावर रहेको स्थान</th>
+              <th>वडा नं</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+              <td>test</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </section>
+
+    </body>
+  </html>
